@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: php-deployment
+    env: static
+    buildCommand: ""
+    staticPublishPath: .
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /Web_Application_Deployment.php
