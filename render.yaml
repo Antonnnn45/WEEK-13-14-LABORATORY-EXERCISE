@@ -1,10 +1,18 @@
 services:
   - type: web
-    name: php-deployment
-    env: static
+    name: Casanova_Charlston_DeplyomentLab
+    env: docker
+    plan: free
+    region: oregon
+    dockerfilePath: ./Dockerfile
     buildCommand: ""
-    staticPublishPath: .
-    routes:
-      - type: rewrite
-        source: /*
-        destination: /Web_Application_Deployment.php
+    startCommand: apache2-foreground
+    envVars:
+      - key: DB_HOST
+        value: your-db-host
+      - key: DB_NAME
+        value: student_planner
+      - key: DB_USER
+        value: your-db-username
+      - key: DB_PASS
+        value: your-db-password
