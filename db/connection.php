@@ -1,11 +1,12 @@
 <?php
 function getDbConnection() {
-    $host = getenv('DB_HOST') ?: '127.0.0.1';
-    $dbname = getenv('DB_NAME') ?: 'student_planner';
-    $username = getenv('DB_USER') ?: 'root';
-    $password = getenv('DB_PASS') ?: '';
+    $host = 'sql12.freesqldatabase.com';
+    $dbname = 'sql12783082';
+    $username = 'sql12783082';
+    $password = 'sti5iJ3X4d';
+    $port = 3306;
 
-    $dsn = "mysql:host=$host;dbname=$dbname;charset=utf8mb4";
+    $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4";
 
     try {
         $pdo = new PDO($dsn, $username, $password);
